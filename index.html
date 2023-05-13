@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+<style>
+.search-layer {
+  top: 100px;
+  left: .5em;
+}
+.ol-touch .search-layer {
+  top: 130px;
+}
+</style>
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control button {
+            background-color: #f8f8f8 !important;
+            color: #000000 !important;
+            border-radius: 0px !important;
+        }
+        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 3px !important;
+        }
+        .ol-scale-line {
+            background: none !important;
+        }
+        .ol-scale-line-inner {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+            color: black !important;
+        }
+        </style>
+<style>
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.measure-control {
+  top: 65px;
+  left: .5em;
+}
+.ol-touch .measure-control {
+  top: 80px;
+}
+</style>
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="resources/polyfills.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="layers/WilliamstownBorder_2.js"></script><script src="layers/January8_3.js"></script><script src="layers/January9_4.js"></script><script src="layers/January10_5.js"></script><script src="layers/January12_6.js"></script><script src="layers/January14_7.js"></script><script src="layers/January15_8.js"></script><script src="layers/January17_9.js"></script><script src="layers/January18_10.js"></script><script src="layers/January19_11.js"></script><script src="layers/January21_12.js"></script><script src="layers/January22_13.js"></script><script src="layers/February2_14.js"></script><script src="layers/February5_15.js"></script><script src="layers/February8_16.js"></script><script src="layers/February11_17.js"></script><script src="layers/February13_18.js"></script><script src="layers/February15_19.js"></script><script src="layers/February16_20.js"></script><script src="layers/February18_21.js"></script><script src="layers/February19_22.js"></script><script src="layers/February21_23.js"></script><script src="layers/February24_24.js"></script><script src="layers/February26_25.js"></script><script src="layers/March1_26.js"></script><script src="layers/March6_27.js"></script><script src="layers/March11_28.js"></script><script src="layers/April8_29.js"></script><script src="layers/April10_30.js"></script><script src="layers/April12_31.js"></script><script src="layers/April16_32.js"></script><script src="layers/April22_33.js"></script><script src="layers/April25_34.js"></script><script src="layers/April26_35.js"></script><script src="layers/April30_36.js"></script><script src="layers/May5_37.js"></script><script src="layers/May7_38.js"></script><script src="layers/May11_39.js"></script><script src="layers/May13_40.js"></script>
+        <script src="styles/WilliamstownBorder_2_style.js"></script><script src="styles/January8_3_style.js"></script><script src="styles/January9_4_style.js"></script><script src="styles/January10_5_style.js"></script><script src="styles/January12_6_style.js"></script><script src="styles/January14_7_style.js"></script><script src="styles/January15_8_style.js"></script><script src="styles/January17_9_style.js"></script><script src="styles/January18_10_style.js"></script><script src="styles/January19_11_style.js"></script><script src="styles/January21_12_style.js"></script><script src="styles/January22_13_style.js"></script><script src="styles/February2_14_style.js"></script><script src="styles/February5_15_style.js"></script><script src="styles/February8_16_style.js"></script><script src="styles/February11_17_style.js"></script><script src="styles/February13_18_style.js"></script><script src="styles/February15_19_style.js"></script><script src="styles/February16_20_style.js"></script><script src="styles/February18_21_style.js"></script><script src="styles/February19_22_style.js"></script><script src="styles/February21_23_style.js"></script><script src="styles/February24_24_style.js"></script><script src="styles/February26_25_style.js"></script><script src="styles/March1_26_style.js"></script><script src="styles/March6_27_style.js"></script><script src="styles/March11_28_style.js"></script><script src="styles/April8_29_style.js"></script><script src="styles/April10_30_style.js"></script><script src="styles/April12_31_style.js"></script><script src="styles/April16_32_style.js"></script><script src="styles/April22_33_style.js"></script><script src="styles/April25_34_style.js"></script><script src="styles/April26_35_style.js"></script><script src="styles/April30_36_style.js"></script><script src="styles/May5_37_style.js"></script><script src="styles/May7_38_style.js"></script><script src="styles/May11_39_style.js"></script><script src="styles/May13_40_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+    </body>
+</html>
